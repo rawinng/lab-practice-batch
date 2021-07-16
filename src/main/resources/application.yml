@@ -1,0 +1,23 @@
+spring:
+  profiles:
+    active: "dev"
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+      
+  # DATASOURCE
+  datasource:
+    url: jdbc:mariadb://localhost:3306/hello
+    username: hello_usr
+    password: password
+    
+
+  # BATCH AUTO CREATE
+  batch:
+    initialize-schema: always
+    
+  jpa:
+    hibernate:
+      ddl-auto: create
